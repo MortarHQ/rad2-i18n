@@ -1,13 +1,12 @@
 # ftb_i18n
 
-注意，此汉化为无授权汉化，不可用于商业用途。
-这篇教程会教你如何向RAD2汉化进行贡献。
+注意，此汉化为无授权汉化，不可用于商业用途。  
+这篇教程会教你如何向RAD2汉化进行贡献。  
 翻译预览请见[https://landminehq.github.io/rad2-i18n/](https://landminehq.github.io/rad2-i18n/)
 
 ## 使用的IDE
 
 首先，需要你下载[VSCode](https://code.visualstudio.com/)，你可以选择下载user版本与system版本，推荐下载user版本。
-
 
 ## 推荐的插件配置
 
@@ -20,6 +19,7 @@
 ]
 
 在你完成node环境安装后，你需要使用vscode创建并打开一个文件夹，然后输入
+
 ```sh
 # 导入项目文件
 git clone https://github.com/landminehq/rad2-i18n.git
@@ -35,5 +35,5 @@ npm install
 npm run dev
 ```
 
-此时已经完成了项目的安装并进行语言对比，当然实际上你并不需要使用web页面来进行查看。
+此时已经完成了项目的安装并进行语言对比，当然实际上你并不需要使用web页面来进行查看。  
 这里仅提供一种可行的方式，主要是借助vue的生态环境来快速进行本地化操作。
