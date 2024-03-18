@@ -1,0 +1,757 @@
+{
+	id: "000000000000062C"
+	group: "0FF98225FE921275"
+	order_index: 0
+	filename: "a_reliable_friend"
+	title: "{chapter.29.title}"
+	icon: "doggytalents:doggy_charm"
+	default_quest_shape: ""
+	default_hide_dependency_lines: false
+	quests: [
+		{
+			title: "{chapter.29.quest.1.title}"
+			x: -3.0d
+			y: -2.5d
+			shape: "gear"
+			description: ["{chapter.29.quest.1.description.1}"]
+			size: 1.5d
+			id: "000000000000062D"
+			tasks: [{
+				id: "000000000000062E"
+				type: "item"
+				item: "minecraft:bone"
+				count: 8L
+			}]
+			rewards: [
+				{
+					id: "000000000000066F"
+					type: "item"
+					item: "aquaculture:box"
+				}
+				{
+					id: "1E81638DEBDC2793"
+					type: "item"
+					item: {
+						id: "ftbquests:lootcrate"
+						Count: 1b
+						tag: {
+							type: "potions"
+						}
+					}
+				}
+			]
+		}
+		{
+			x: -0.5d
+			y: -2.5d
+			description: ["{chapter.29.quest.2.description.1}"]
+			dependencies: ["000000000000062D"]
+			id: "000000000000062F"
+			tasks: [{
+				id: "0000000000000630"
+				type: "item"
+				item: "doggytalents:training_treat"
+			}]
+			rewards: [{
+				id: "000000000000065C"
+				type: "xp_levels"
+				xp_levels: 3
+			}]
+		}
+		{
+			x: -0.5d
+			y: -0.5d
+			description: ["{chapter.29.quest.3.description.1}"]
+			dependencies: ["000000000000062F"]
+			id: "0000000000000631"
+			tasks: [{
+				id: "0000000000000632"
+				type: "item"
+				item: "minecraft:stick"
+			}]
+			rewards: [{
+				id: "0000000000000664"
+				type: "xp_levels"
+				xp_levels: 3
+			}]
+		}
+		{
+			x: 1.5d
+			y: -4.5d
+			description: ["{chapter.29.quest.4.description.1}"]
+			dependencies: ["000000000000062F"]
+			id: "0000000000000633"
+			tasks: [{
+				id: "0000000000000634"
+				type: "item"
+				item: "doggytalents:super_treat"
+			}]
+			rewards: [
+				{
+					id: "000000000000066C"
+					type: "xp_levels"
+					xp_levels: 5
+				}
+				{
+					id: "1205359A60610AB9"
+					type: "item"
+					item: "aquaculture:lockbox"
+				}
+				{
+					id: "0CD953CFE28C78FA"
+					type: "ftbmoney:money"
+					ftb_money: 10L
+				}
+			]
+		}
+		{
+			x: 3.5d
+			y: -4.5d
+			description: ["{chapter.29.quest.5.description.1}"]
+			dependencies: ["0000000000000633"]
+			id: "0000000000000635"
+			tasks: [{
+				id: "0000000000000636"
+				type: "item"
+				item: "doggytalents:master_treat"
+			}]
+			rewards: [
+				{
+					id: "000000000000066D"
+					type: "xp_levels"
+					xp_levels: 5
+				}
+				{
+					id: "0000000000000671"
+					type: "item"
+					item: "aquaculture:lockbox"
+				}
+				{
+					id: "0000000000000678"
+					type: "item"
+					item: "minecraft:ender_pearl"
+				}
+				{
+					id: "2E43F958185DC440"
+					type: "ftbmoney:money"
+					ftb_money: 10L
+				}
+			]
+		}
+		{
+			x: 5.5d
+			y: -4.5d
+			description: ["{chapter.29.quest.6.description.1}"]
+			dependencies: ["0000000000000635"]
+			id: "0000000000000637"
+			tasks: [{
+				id: "0000000000000638"
+				type: "item"
+				item: "doggytalents:dire_treat"
+			}]
+			rewards: [
+				{
+					id: "000000000000066E"
+					type: "xp_levels"
+					xp_levels: 5
+				}
+				{
+					id: "0000000000000670"
+					type: "item"
+					item: "aquaculture:lockbox"
+				}
+				{
+					id: "0000000000000677"
+					type: "item"
+					item: "minecraft:gold_ingot"
+					count: 3
+				}
+				{
+					id: "5FB966971CF6BE79"
+					type: "ftbmoney:money"
+					ftb_money: 10L
+				}
+			]
+		}
+		{
+			title: "{chapter.29.quest.7.title}"
+			x: 3.5d
+			y: -2.5d
+			description: ["{chapter.29.quest.7.description.1}"]
+			dependencies: ["000000000000062F"]
+			id: "0000000000000639"
+			tasks: [{
+				id: "000000000000063A"
+				type: "item"
+				item: {
+					id: "doggytalents:whistle"
+					Count: 1b
+					tag: {
+						mode: 4
+					}
+				}
+			}]
+			rewards: [
+				{
+					id: "000000000000065E"
+					type: "xp_levels"
+					xp_levels: 3
+				}
+				{
+					id: "07175F90925E7751"
+					type: "ftbmoney:money"
+					ftb_money: 10L
+				}
+			]
+		}
+		{
+			x: 5.0d
+			y: -1.5d
+			description: ["{chapter.29.quest.8.description.1}"]
+			dependencies: ["0000000000000639"]
+			id: "000000000000063B"
+			tasks: [
+				{
+					id: "000000000000063C"
+					type: "item"
+					item: "doggytalents:radar"
+				}
+				{
+					id: "0000000000000657"
+					type: "item"
+					item: "doggytalents:radio_collar"
+				}
+			]
+			rewards: [
+				{
+					id: "000000000000065F"
+					type: "xp_levels"
+					xp_levels: 3
+				}
+				{
+					id: "0000000000000675"
+					type: "item"
+					item: "minecraft:redstone"
+					count: 5
+				}
+				{
+					id: "4EE7323A301A5858"
+					type: "ftbmoney:money"
+					ftb_money: 10L
+				}
+			]
+		}
+		{
+			x: -2.0d
+			y: -0.5d
+			description: ["{chapter.29.quest.9.description.1}"]
+			dependencies: ["0000000000000631"]
+			id: "000000000000063D"
+			tasks: [{
+				id: "000000000000063E"
+				type: "item"
+				item: "doggytalents:treat_bag"
+			}]
+			rewards: [
+				{
+					id: "0000000000000666"
+					type: "xp_levels"
+					xp_levels: 3
+				}
+				{
+					id: "000000000000067F"
+					type: "item"
+					item: "minecraft:bone"
+					count: 5
+				}
+				{
+					id: "68A0B456AA1AA7BF"
+					type: "ftbmoney:money"
+					ftb_money: 10L
+				}
+			]
+		}
+		{
+			title: "{chapter.29.quest.10.title}"
+			x: 2.0d
+			y: -1.5d
+			dependencies: ["0000000000000639"]
+			id: "000000000000063F"
+			tasks: [
+				{
+					id: "0000000000000640"
+					type: "item"
+					item: "doggytalents:cape"
+				}
+				{
+					id: "0000000000000641"
+					type: "item"
+					item: "doggytalents:cape_coloured"
+				}
+				{
+					id: "0000000000000642"
+					type: "item"
+					item: "doggytalents:leather_jacket"
+				}
+				{
+					id: "0000000000000643"
+					type: "item"
+					item: "doggytalents:sunglasses"
+				}
+			]
+			rewards: [
+				{
+					id: "0000000000000660"
+					type: "xp_levels"
+					xp_levels: 3
+				}
+				{
+					id: "000000000000067A"
+					type: "item"
+					item: "minecraft:slime_ball"
+					count: 5
+				}
+				{
+					id: "000000000000067B"
+					type: "item"
+					item: "minecraft:ender_pearl"
+				}
+				{
+					id: "7A937262A8B529FE"
+					type: "ftbmoney:money"
+					ftb_money: 10L
+				}
+				{
+					id: "108728DD1C588974"
+					type: "item"
+					item: {
+						id: "farmersdelight:dog_food"
+						Count: 1b
+						ForgeCaps: {
+							"dungeons_libraries:built_in_enchantments": {
+								BuiltInEnchantments: [ ]
+							}
+						}
+					}
+				}
+			]
+		}
+		{
+			x: 3.0d
+			y: -0.5d
+			description: ["{chapter.29.quest.11.description.1}"]
+			dependencies: ["0000000000000639"]
+			id: "0000000000000644"
+			tasks: [
+				{
+					id: "0000000000000645"
+					type: "item"
+					item: "doggytalents:spotted_collar"
+				}
+				{
+					id: "0000000000000647"
+					type: "item"
+					item: {
+						id: "doggytalents:wool_collar"
+						Count: 1b
+						tag: {
+							collar_colour: 16383998
+						}
+					}
+				}
+				{
+					id: "0000000000000648"
+					type: "item"
+					item: "doggytalents:multicoloured_collar"
+				}
+			]
+			rewards: [
+				{
+					id: "000000000000066B"
+					type: "xp_levels"
+					xp_levels: 5
+				}
+				{
+					id: "0000000000000676"
+					type: "item"
+					item: "minecraft:black_dye"
+					count: 16
+				}
+				{
+					id: "7C177854BE43C380"
+					type: "ftbmoney:money"
+					ftb_money: 10L
+				}
+			]
+		}
+		{
+			x: 0.5d
+			y: 1.0d
+			description: ["{chapter.29.quest.12.description.1}"]
+			dependencies: ["0000000000000631"]
+			id: "0000000000000649"
+			tasks: [{
+				id: "000000000000064A"
+				type: "item"
+				item: "doggytalents:chew_stick"
+			}]
+			rewards: [
+				{
+					id: "0000000000000665"
+					type: "xp_levels"
+					xp_levels: 3
+				}
+				{
+					id: "0000000000000672"
+					type: "item"
+					item: "minecraft:chicken"
+					count: 3
+				}
+			]
+		}
+		{
+			x: 0.0d
+			y: 2.5d
+			description: ["{chapter.29.quest.13.description.1}"]
+			dependencies: ["0000000000000649"]
+			id: "000000000000064B"
+			tasks: [{
+				id: "000000000000064C"
+				type: "item"
+				item: "doggytalents:throw_bone"
+			}]
+			rewards: [
+				{
+					id: "0000000000000667"
+					type: "xp_levels"
+					xp_levels: 3
+				}
+				{
+					id: "0000000000000680"
+					type: "item"
+					item: "minecraft:black_dye"
+					count: 16
+				}
+				{
+					id: "4C36C4CB25688ACF"
+					type: "ftbmoney:money"
+					ftb_money: 10L
+				}
+			]
+		}
+		{
+			x: 1.0d
+			y: 2.5d
+			description: ["{chapter.29.quest.14.description.1}"]
+			dependencies: ["0000000000000649"]
+			id: "000000000000064D"
+			tasks: [{
+				id: "000000000000064E"
+				type: "item"
+				item: "doggytalents:throw_stick"
+			}]
+			rewards: [
+				{
+					id: "0000000000000668"
+					type: "xp_levels"
+					xp_levels: 3
+				}
+				{
+					id: "000000000000067E"
+					type: "item"
+					item: "minecraft:egg"
+					count: 3
+				}
+				{
+					id: "5EB925A23AC2E368"
+					type: "ftbmoney:money"
+					ftb_money: 10L
+				}
+				{
+					id: "201219CB088CEF0C"
+					type: "item"
+					item: "aquaculture:lockbox"
+				}
+			]
+		}
+		{
+			x: -3.0d
+			y: 1.0d
+			description: ["{chapter.29.quest.15.description.1}"]
+			dependencies: ["0000000000000651"]
+			id: "000000000000064F"
+			tasks: [{
+				id: "0000000000000650"
+				type: "item"
+				item: "doggytalents:breeding_bone"
+			}]
+			rewards: [
+				{
+					id: "0000000000000662"
+					type: "xp_levels"
+					xp_levels: 3
+				}
+				{
+					id: "0000000000000673"
+					type: "item"
+					item: "minecraft:porkchop"
+					count: 2
+				}
+				{
+					id: "066E4B851BAD0BB4"
+					type: "ftbmoney:money"
+					ftb_money: 10L
+				}
+			]
+		}
+		{
+			x: -1.5d
+			y: 1.0d
+			subtitle: "{chapter.29.quest.16.subtitle}"
+			description: ["{chapter.29.quest.16.description.1}"]
+			dependencies: ["0000000000000631"]
+			id: "0000000000000651"
+			tasks: [{
+				id: "0000000000000652"
+				type: "item"
+				item: {
+					id: "doggytalents:dog_bed"
+					Count: 1b
+					tag: {
+						doggytalents: {
+							casingId: "minecraft:oak_planks"
+							beddingId: "minecraft:white_wool"
+						}
+					}
+				}
+				match_nbt: false
+			}]
+			rewards: [
+				{
+					id: "0000000000000663"
+					type: "xp_levels"
+					xp_levels: 3
+				}
+				{
+					id: "0000000000000681"
+					type: "item"
+					item: "minecraft:egg"
+					count: 3
+				}
+			]
+		}
+		{
+			x: -1.0d
+			y: 2.5d
+			description: ["{chapter.29.quest.17.description.1}"]
+			dependencies: ["0000000000000651"]
+			id: "0000000000000653"
+			tasks: [{
+				id: "0000000000000654"
+				type: "item"
+				item: "doggytalents:dog_bath"
+			}]
+			rewards: [
+				{
+					id: "0000000000000669"
+					type: "xp_levels"
+					xp_levels: 3
+				}
+				{
+					id: "000000000000067D"
+					type: "item"
+					item: "minecraft:slime_ball"
+					count: 5
+				}
+				{
+					id: "7F27C39CD14FBEC9"
+					type: "ftbmoney:money"
+					ftb_money: 10L
+				}
+			]
+		}
+		{
+			x: -2.0d
+			y: 2.5d
+			description: ["{chapter.29.quest.18.description.1}"]
+			dependencies: ["0000000000000651"]
+			id: "0000000000000655"
+			tasks: [{
+				id: "0000000000000656"
+				type: "item"
+				item: "doggytalents:food_bowl"
+			}]
+			rewards: [
+				{
+					id: "000000000000066A"
+					type: "xp_levels"
+					xp_levels: 3
+				}
+				{
+					id: "0000000000000674"
+					type: "item"
+					item: "minecraft:mutton"
+					count: 3
+				}
+				{
+					id: "59E90D44A7085F45"
+					type: "ftbmoney:money"
+					ftb_money: 10L
+				}
+				{
+					id: "467EAED6C96FA94D"
+					type: "item"
+					item: {
+						id: "ftbquests:lootcrate"
+						Count: 1b
+						tag: {
+							type: "materials_monsters"
+						}
+					}
+				}
+			]
+		}
+		{
+			x: 4.0d
+			y: -0.5d
+			description: ["{chapter.29.quest.19.description.1}"]
+			dependencies: ["0000000000000639"]
+			id: "0000000000000658"
+			tasks: [{
+				id: "0000000000000659"
+				type: "item"
+				item: "doggytalents:collar_shears"
+			}]
+			rewards: [
+				{
+					id: "0000000000000661"
+					type: "xp_levels"
+					xp_levels: 3
+				}
+				{
+					id: "000000000000067C"
+					type: "item"
+					item: "minecraft:bone"
+					count: 5
+				}
+				{
+					id: "16FEC89FC0B86C47"
+					type: "ftbmoney:money"
+					ftb_money: 10L
+				}
+				{
+					id: "20511E4B7917B7E9"
+					type: "item"
+					item: "aquaculture:lockbox"
+				}
+			]
+		}
+		{
+			x: -0.5d
+			y: -4.5d
+			description: ["{chapter.29.quest.20.description.1}"]
+			dependencies: ["000000000000062F"]
+			id: "000000000000065A"
+			tasks: [{
+				id: "000000000000065B"
+				type: "checkmark"
+				title: "{chapter.29.quest.20.task.1.title}"
+				icon: "itemfilters:tag"
+			}]
+			rewards: [{
+				id: "000000000000065D"
+				type: "xp_levels"
+				xp_levels: 3
+			}]
+		}
+		{
+			icon: {
+				id: "minecraft:iron_chestplate"
+				Count: 1b
+				tag: {
+					Damage: 0
+				}
+			}
+			x: -2.0d
+			y: -4.5d
+			description: ["{chapter.29.quest.21.description.1}"]
+			dependencies: ["000000000000062F"]
+			id: "6C2E2AA49378EE39"
+			tasks: [{
+				id: "7FA3E78C24A8B216"
+				type: "checkmark"
+				title: "{chapter.29.quest.21.task.1.title}"
+			}]
+			rewards: [{
+				id: "3F4AC90160ACC917"
+				type: "item"
+				item: {
+					id: "dungeons_gear:hunters_leggings"
+					Count: 1b
+					tag: {
+						Damage: 0
+					}
+					ForgeCaps: {
+						"dungeons_libraries:built_in_enchantments": {
+							BuiltInEnchantments: [{
+								data: [{
+									lvl: 1s
+									id: "dungeons_gear:speed_aura"
+								}]
+								source: "dungeons_libraries:gear_config"
+							}]
+						}
+					}
+				}
+			}]
+		}
+		{
+			title: "{chapter.29.quest.22.title}"
+			x: 1.0d
+			y: -0.5d
+			description: ["{chapter.29.quest.22.description.1}"]
+			dependencies: ["000000000000062F"]
+			id: "6C50E14A07952420"
+			tasks: [
+				{
+					id: "21E6231BFE97E6E4"
+					type: "item"
+					item: {
+						id: "doggytalents:tiny_bone"
+						Count: 1b
+						ForgeCaps: {
+							"dungeons_libraries:built_in_enchantments": {
+								BuiltInEnchantments: [ ]
+							}
+						}
+					}
+				}
+				{
+					id: "61E75C1E943A1EF2"
+					type: "item"
+					item: {
+						id: "doggytalents:big_bone"
+						Count: 1b
+						ForgeCaps: {
+							"dungeons_libraries:built_in_enchantments": {
+								BuiltInEnchantments: [ ]
+							}
+						}
+					}
+				}
+			]
+			rewards: [
+				{
+					id: "33B282C4308C68DA"
+					type: "xp_levels"
+					xp_levels: 3
+				}
+				{
+					id: "6AD75E033E5C6D7F"
+					type: "ftbmoney:money"
+					ftb_money: 10L
+				}
+			]
+		}
+	]
+}

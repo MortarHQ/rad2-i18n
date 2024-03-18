@@ -1,0 +1,269 @@
+{
+	id: "2B8506307F0DA912"
+	group: "241F1DC7B6D6E9D6"
+	order_index: 4
+	filename: "dimensional_dungeons"
+	title: "{chapter.10.title}"
+	icon: "dimdungeons:block_portal_keyhole"
+	subtitle: ["{chapter.10.subtitle}"]
+	default_quest_shape: "hexagon"
+	default_hide_dependency_lines: false
+	images: [
+		{
+			x: 5.5d
+			y: 2.0d
+			width: 2.0d
+			height: 2.0d
+			rotation: 0.0d
+			image: "dimdungeons:textures/block/block_keyhole_front_lit2.png"
+			hover: [ ]
+			click: ""
+			dev: false
+			corner: false
+		}
+		{
+			x: 7.5d
+			y: 4.0d
+			width: 2.0d
+			height: 2.0d
+			rotation: 0.0d
+			image: "dimdungeons:textures/block/block_keyhole_front_empty.png"
+			hover: [ ]
+			click: ""
+			dev: false
+			corner: false
+		}
+		{
+			x: 7.5d
+			y: 2.0d
+			width: 2.0d
+			height: 2.0d
+			rotation: 0.0d
+			image: "dimdungeons:textures/block/block_charger_top_3.png"
+			hover: [ ]
+			click: ""
+			dev: false
+			corner: false
+		}
+		{
+			x: 5.5d
+			y: 4.0d
+			width: 2.0d
+			height: 2.0d
+			rotation: 0.0d
+			image: "dimdungeons:textures/block/block_charger_top_1.png"
+			hover: [ ]
+			click: ""
+			dev: false
+			corner: false
+		}
+	]
+	quests: [
+		{
+			x: 4.0d
+			y: 3.0d
+			description: ["{chapter.10.quest.1.description.1}"]
+			id: "373262E31E3E4D5B"
+			tasks: [{
+				id: "0549D2EE17A5251A"
+				type: "item"
+				item: {
+					id: "patchouli:guide_book"
+					Count: 1b
+					tag: {
+						"patchouli:book": "dimdungeons:guide_book"
+					}
+				}
+			}]
+			rewards: [
+				{
+					id: "5C2D4295AB59621B"
+					type: "item"
+					item: "aquaculture:lockbox"
+				}
+				{
+					id: "1735164BA2D78666"
+					type: "item"
+					item: "randomite:randomite_ore"
+				}
+			]
+		}
+		{
+			x: 4.0d
+			y: 5.5d
+			description: ["{chapter.10.quest.2.description.1}"]
+			dependencies: ["373262E31E3E4D5B"]
+			id: "49D31A8380AFA032"
+			tasks: [{
+				id: "12B2B5EEC9822AE4"
+				type: "item"
+				item: "dimdungeons:item_portal_key"
+			}]
+			rewards: [{
+				id: "61B9A2749C052810"
+				type: "item"
+				item: {
+					id: "ftbquests:lootcrate"
+					Count: 1b
+					tag: {
+						type: "materials_random"
+					}
+				}
+			}]
+		}
+		{
+			x: 6.5d
+			y: 0.5d
+			description: ["{chapter.10.quest.3.description.1}"]
+			dependencies: ["19C09B0537FF8F85"]
+			id: "06FDB1551D976F28"
+			tasks: [{
+				id: "4DF5F1A54C512A3A"
+				type: "item"
+				item: "dimdungeons:block_gilded_portal"
+				count: 3L
+			}]
+			rewards: [
+				{
+					id: "49785DA9C5E9C87B"
+					type: "ftbmoney:money"
+					ftb_money: 20L
+				}
+				{
+					id: "4C2D7FF0D88E1E94"
+					type: "item"
+					item: "aquaculture:lockbox"
+				}
+			]
+		}
+		{
+			x: 9.0d
+			y: 0.5d
+			description: ["{chapter.10.quest.4.description.1}"]
+			dependencies: ["06FDB1551D976F28"]
+			id: "467404C9A88BA929"
+			tasks: [{
+				id: "3C4B4629A328B684"
+				type: "item"
+				item: "dimdungeons:block_portal_keyhole"
+			}]
+			rewards: [
+				{
+					id: "3FC9CD30F75F7A70"
+					type: "ftbmoney:money"
+					ftb_money: 20L
+				}
+				{
+					id: "77E853324AA3466E"
+					type: "item"
+					item: "aquaculture:lockbox"
+				}
+			]
+		}
+		{
+			title: "{chapter.10.quest.5.title}"
+			x: 6.5d
+			y: 5.5d
+			description: ["{chapter.10.quest.5.description.1}"]
+			dependencies: ["49D31A8380AFA032"]
+			id: "2205A97ACB6A9309"
+			tasks: [{
+				id: "028ACB8879FC66F1"
+				type: "checkmark"
+			}]
+			rewards: [{
+				id: "557BA510C4195368"
+				type: "ftbmoney:money"
+				ftb_money: 5L
+			}]
+		}
+		{
+			x: 4.0d
+			y: 0.5d
+			description: ["{chapter.10.quest.6.description.1}"]
+			dependencies: ["373262E31E3E4D5B"]
+			id: "19C09B0537FF8F85"
+			tasks: [{
+				id: "0E498E4858047C55"
+				type: "checkmark"
+				title: "{chapter.10.quest.6.task.1.title}"
+			}]
+			rewards: [{
+				id: "7E79C499DFD17B21"
+				type: "ftbmoney:money"
+				ftb_money: 5L
+			}]
+		}
+		{
+			x: 9.0d
+			y: 2.5d
+			description: [
+				"{chapter.10.quest.7.description.1}"
+				"{image:rad2:textures/misc/build_basic_1.png width:170 height:100 align:1}"
+				"{chapter.10.quest.7.description.2}"
+			]
+			dependencies: ["467404C9A88BA929"]
+			id: "46BDA3FB1FD338F7"
+			tasks: [{
+				id: "48F36A95518DC117"
+				type: "checkmark"
+				title: "{chapter.10.quest.7.task.1.title}"
+			}]
+			rewards: [{
+				id: "06781A553566752E"
+				type: "ftbmoney:money"
+				ftb_money: 5L
+			}]
+		}
+		{
+			x: 9.0d
+			y: 5.5d
+			subtitle: "{chapter.10.quest.8.subtitle}"
+			dependencies: ["2205A97ACB6A9309"]
+			id: "5F3AE6FDE9AC06B6"
+			tasks: [{
+				id: "4F86E5AD6BC0CB17"
+				type: "advancement"
+				advancement: "dimdungeons:dungeons/activate_basic_key"
+				criterion: ""
+			}]
+			rewards: [{
+				id: "5E68E60CB268C538"
+				type: "item"
+				item: {
+					id: "ftbquests:lootcrate"
+					Count: 1b
+					tag: {
+						type: "potions"
+					}
+				}
+			}]
+		}
+		{
+			x: 9.0d
+			y: 3.5d
+			subtitle: "{chapter.10.quest.9.subtitle}"
+			description: ["{chapter.10.quest.9.description.1}"]
+			dependencies: ["5F3AE6FDE9AC06B6"]
+			id: "563459F7C0D8D8D3"
+			tasks: [{
+				id: "3A7C69B1D45081EA"
+				type: "advancement"
+				advancement: "dimdungeons:dungeons/find_crown"
+				criterion: ""
+			}]
+			rewards: [
+				{
+					id: "03D3B4BD7967EF3C"
+					type: "item"
+					item: "aquaculture:treasure_chest"
+				}
+				{
+					id: "58626ABC605251BF"
+					type: "ftbmoney:money"
+					ftb_money: 30L
+				}
+			]
+		}
+	]
+}
