@@ -4,7 +4,7 @@
   "private": true,
   "type": "module",
   "scripts": {
-    "dev": "concurrently --names 'Vite,Express' 'npm run dev:vite' 'npm run dev:express'",
+    "dev": "concurrently --names \"Vite,Express\" \"npm run dev:vite\" \"npm run dev:express\"",
     "dev:vite": "vite",
     "dev:express": "node src/server.js",
     "build:vite": "vite build",
