@@ -17,10 +17,14 @@ a,
 body {
   display: flex;
   place-items: center;
+  justify-content: center;
 }
 
 #app {
   display: grid;
+  gap: 2rem;
   grid-template-columns: 1fr;
   padding: 0 2rem;
+  max-width: 100%;
+  min-height: 100%;
 }

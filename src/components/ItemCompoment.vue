@@ -15,19 +15,18 @@
         <td>
           <table>
             <tr>
-              <td>
-                {{ item.en }}
-              </td>
+              <div v-text="item.en" class="noSpaceCollapse"></div>
             </tr>
             <tr>
-              <td>
-                {{ item.auto }}
-              </td>
+              <div v-text="item.auto" class="noSpaceCollapse"></div>
             </tr>
             <tr :class="{ nomanul: !item.cn }">
-              <td contenteditable @focusout="focusout(item, $event)">
-                {{ item.cn }}
-              </td>
+              <div
+                v-text="item.cn"
+                class="noSpaceCollapse"
+                @focusout="focusout(item, $event)"
+                contenteditable
+              ></div>
             </tr>
           </table>
         </td>
@@ -101,14 +100,19 @@ table {
     box-shadow: 0px 1px 10px 2px rgba(0, 0, 0, 0.5);
     border-radius: 9px;
   }
+
+  // value 表
+  table {
+    width: 100%;
+    max-width: 1280px;
+  }
 }
 
 /* 行 */
 tr {
-  // 最外层行
+  /* 最外层行 */
   &:not(tr tr) {
     height: 3rem;
-    width: 100%;
     border: 1px solid #ddd;
 
     &:nth-child(2n) {
@@ -118,22 +122,31 @@ tr {
     &:nth-child(2n + 1) {
       border: 1caps solid #ddd;
     }
+
+    // key列
+    & > :nth-child(1) {
+      text-align: center;
+      padding: 0.5rem 1rem;
+      border-right: 1px solid #ddd;
+      border-bottom: 1px solid #ddd;
+      width: 0;
+    }
   }
 
+  /* 语言对照 value */
   & tr {
-    height: 2rem;
-
-    &:nth-child(2n) {
-      background-color: #f2f2f2;
-      filter: contrast(1);
+    .noSpaceCollapse {
+      white-space: pre;
+      padding: 1rem 0.5rem;
     }
 
     /* 没有翻译，给予背景标红 */
-    &.nomanul {
+    &.nomanul div {
+      height: 100%;
       background-color: #e43d33;
     }
 
-    > td {
+    > div {
       &:focus {
         background-color: #18bc37;
         outline: none;
