@@ -23,7 +23,7 @@
             <tr :class="{ nomanul: !item.cn }">
               <div
                 v-text="item.cn"
-                class="noSpaceCollapse"
+                class="noSpaceCollapse editable"
                 @focusout="focusout(item, $event)"
                 contenteditable
               ></div>
@@ -136,8 +136,18 @@ tr {
   /* 语言对照 value */
   & tr {
     .noSpaceCollapse {
+      margin-left: 1rem;
       white-space: pre;
       padding: 1rem 0.5rem;
+
+      /* 编辑区 */
+      &.editable {
+        margin-top: 2rem;
+        margin-bottom: 2rem;
+        // 虚线边框
+        border: 3px dashed #ddd;
+        border-radius: 1rem;
+      }
     }
 
     /* 没有翻译，给予背景标红 */
