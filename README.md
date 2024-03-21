@@ -15,7 +15,7 @@
 ## 启动项目的实时对比功能
 
 首先，你的电脑需要具有node.js环境，你可以到[官网](https://nodejs.org/en)进行下载安装。
-这边推荐使用第三方node管理工具来安装node.js，你可以在node.js官网找到推荐的[三方管理工具](https://nodejs.org/en/download/package-manager)，个人推荐使用[nvs](https://nodejs.org/en/download/package-manager#nvs)。
+这边推荐使用第三方node管理工具来安装node.js，你可以在node.js官网找到推荐的[三方管理工具](https://nodejs.org/en/download/package-manager)，个人推荐使用[nvs](https://nodejs.org/en/download/package-manager/all#nvs)。
 
 在你完成node环境安装后，你需要使用vscode创建并打开一个文件夹，然后输入
 
