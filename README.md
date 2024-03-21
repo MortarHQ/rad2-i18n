@@ -20,7 +20,7 @@
 在你完成node环境安装后，你需要使用vscode创建并打开一个文件夹，然后输入
 
 ```sh
-# 导入项目文件
+# 克隆项目文件
 git clone https://github.com/landminehq/rad2-i18n.git
 ```
 
