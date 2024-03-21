@@ -8,6 +8,8 @@
     "dev:vite": "vite",
     "dev:express": "node src/server.js",
     "build:vite": "vite build",
+    "build:lang": "node src/buildPackage.js",
+    "build": "npm run build:vite && npm run build:lang",
     "preview": "vite preview"
   },
   "dependencies": {
@@ -19,6 +21,7 @@
   },
   "devDependencies": {
     "@vitejs/plugin-vue": "^5.0.4",
+    "archiver": "^7.0.1",
     "concurrently": "^8.2.2",
     "nodemon": "^3.1.0",
     "sass": "^1.72.0",
