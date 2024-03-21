@@ -1,7 +1,14 @@
 <template>
-  <table>
-    <caption>
-      预览表，仅供预览，禁止商业用途
+  <table
+    :class="{
+      hideFinishedText: props.describeFinishedText,
+      hideAutoText: props.describeAutoText,
+    }"
+  >
+    <caption style="text-align: left; padding-bottom: 0.5rem">
+      {{
+        caption
+      }}
     </caption>
     <thead>
       <tr>
@@ -20,7 +27,7 @@
             <tr>
               <div v-text="item.auto" class="noSpaceCollapse"></div>
             </tr>
-            <tr :class="{ nomanul: !item.cn }">
+            <tr :class="{ noManul: !item.cn }">
               <div
                 v-text="item.cn"
                 class="noSpaceCollapse editable"
@@ -45,8 +52,20 @@
  * @description 读取语言文件，构造对比类并展示
  *
  */
+
 import { ref } from "vue";
 import axios from "axios";
+
+const props = defineProps({
+  describeFinishedText: {
+    type: Boolean,
+    default: true,
+  },
+  describeAutoText: {
+    type: Boolean,
+    default: true,
+  },
+});
 
 class Item {
   constructor(key, en, cn, auto) {
@@ -57,9 +76,14 @@ class Item {
   }
 }
 
+let caption = "开发者模式，可以修改";
+if (process.env.NODE_ENV === "production")
+  caption = "预览表，仅供预览，修改无效，禁止商业用途";
+
 import en from "@/ftbqkeys/kubejs/assets/kubejs/lang/en_us.json";
 import cn from "@/ftbqkeys/kubejs/assets/kubejs/lang/zh_cn.json";
 import auto from "@/ftbqkeys/kubejs/assets/kubejs/lang/auto.json";
+import { watch } from "vue";
 
 // 循环遍历en中的key，对应的寻找cn与auto的value存贮至新建的item中
 // 最后将item保存到data数组中
@@ -91,6 +115,7 @@ function focusout(item, event) {
 <style scoped lang="scss">
 /* 表格样式 */
 table {
+  // 全局表格样式
   border-collapse: collapse;
   width: 100%;
 
@@ -131,10 +156,22 @@ tr {
       border-bottom: 1px solid #ddd;
       width: 0;
     }
+
+    // 处理ToolsBar:hideAutoText功能
+    .hideFinishedText &:not(*:has(.noManul)) {
+      display: none;
+      background-color: black;
+    }
   }
 
   /* 语言对照 value */
   & tr {
+    // 处理ToolsBar:hideFinishedText功能
+    .hideAutoText &:nth-of-type(2) {
+      display: none;
+      background-color: red;
+    }
+
     .noSpaceCollapse {
       margin-left: 1rem;
       white-space: pre;
@@ -151,7 +188,7 @@ tr {
     }
 
     /* 没有翻译，给予背景标红 */
-    &.nomanul div {
+    &.noManul div {
       height: 100%;
       background-color: #e43d33;
     }
