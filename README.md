@@ -12,7 +12,7 @@
 
 在完成[使用的IDE](#使用的ide)后，你需要安装[i18n Ally](https://marketplace.visualstudio.com/items?itemName=Lokalise.i18n-ally)插件来方便进行对比。
 
-## 启动项目的实时对比功能
+## 安装项目
 
 首先，你的电脑需要具有node.js环境，你可以到[官网](https://nodejs.org/en)进行下载安装。
 这边推荐使用第三方node管理工具来安装node.js，你可以在node.js官网找到推荐的[三方管理工具](https://nodejs.org/en/download/package-manager)，个人推荐使用[nvs](https://nodejs.org/en/download/package-manager/all#nvs)。
@@ -34,20 +34,48 @@ cd rad2-i18n
 npm install
 ```
 
-```sh
-# 编译并运行开发者模式
-npm run dev
-```
-
-此时已经完成了项目的安装并进行语言对比，当然实际上你并不需要使用web页面来进行查看。  
+此时已经完成了项目的安装，当然实际上你并不需要安装node.js和插件等任何环境。  
 这里仅提供一种可行的方式，主要是借助vue的生态环境来快速进行本地化操作。
+
+## 项目的几种启动模式
+
+你可以选择一下的三种模式进行开发
+
++ **[翻译模式]**  
+
+    ***翻译模式*** 能够以最高的效率运行并进行汉化翻译，如果你是为了贡献本地化，请选择此模式。
+
+    ```sh
+    # 编译并运行 翻译模式
+    npm run start
+    ```
+
++ **[预览模式]**  
+
+    ***预览模式*** 能够预览到发布效果，如果你只是想看看项目最终部署到[github-pages](https://landminehq.github.io/rad2-i18n/)上的效果，请选择此模式。
+
+    ```sh
+    # 编译并运行 预览模式
+    npm run preview
+    ```
+
++ **[开发模式]**  
+
+    ***开发模式*** 能够对web ui以及daemon进行实时更新，如果你需要修改web ui或者daemon逻辑，请选择此模式。
+
+    ```sh
+    # 编译并运行 开发模式
+    npm run dev
+    ```
 
 ## 如何贡献
 
 你可以直接修改项目中的
+
 ```dir
 src/ftbqkeys/kubejs/assets/kubejs/lang/zh_cn.json
 ```
+
 语言文件，也可以启动项目的实时对比功能。  
 更推荐你启动项目之后在网页上进行人工翻译。  
 

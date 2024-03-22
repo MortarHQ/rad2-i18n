@@ -1,7 +1,7 @@
 <template>
   <header>
     <div>中英对照</div>
-    <a href="./package.zip"  v-if="appConfig.environment === 'production'"">
+    <a href="./package.zip" v-if="appConfig.environment === 'production'">
       <div>点我下载最新汉化包 package_v{{ packageJson.version }}.zip</div>
     </a>
     <a v-else>
@@ -25,7 +25,7 @@ const appConfig = reactive({
   describeFinishedText: false,
   describeAutoText: false,
   // 运行环境
-  environment: process.env.NODE_ENV,
+  environment: process.env.NODE_ENV || "production",
 });
 
 function updateToolsBarTriger(triger) {

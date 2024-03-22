@@ -4,13 +4,15 @@
   "private": true,
   "type": "module",
   "scripts": {
+    "start": "concurrently --names \"Vite,Express\" \"npm run dev:vite\" \"node src/server.js\"",
     "dev": "concurrently --names \"Vite,Express\" \"npm run dev:vite\" \"npm run dev:express\"",
     "dev:vite": "vite",
-    "dev:express": "node src/server.js",
+    "dev:express": "nodemon src/server.js",
     "build:vite": "vite build",
     "build:lang": "node src/buildPackage.js",
     "build": "npm run build:vite && npm run build:lang",
-    "preview": "vite preview"
+    "preview:express": "node src/server.js --preview",
+    "preview": "npm run build && npm run preview:express"
   },
   "dependencies": {
     "axios": "^1.6.8",

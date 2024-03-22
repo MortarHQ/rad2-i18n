@@ -77,26 +77,32 @@ class Item {
   }
 }
 
-let caption = "开发者模式，可以修改";
-if (process.env.NODE_ENV === "production")
-  caption = "预览表，仅供预览，修改无效，禁止商业用途";
-
-// 循环遍历 en_us 中的 key ，对应的寻找 zh_cn 与 auto 的 value 存贮至新建的 item 中
-// 最后将item保存到data数组中
+let caption = "";
 let data = ref([]);
-// 从后端中读取文件
-Promise.all([
-  getLangFileRequest("en_us"),
-  getLangFileRequest("zh_cn"),
-  getLangFileRequest("auto"),
-]).then((res) => {
-  const en_us = res[0].data;
-  const zh_cn = res[1].data;
-  const auto = res[2].data;
-  for (let key in en_us) {
-    data.value.push(new Item(key, en_us[key], zh_cn[key], auto[key]));
-  }
-});
+if (process.env.NODE_ENV === "production") {
+  // 生产环境
+  caption = "预览表，仅供预览，修改无效，禁止商业用途";
+  Promise.all([
+    import("@/ftbqkeys/kubejs/assets/kubejs/lang/en_us.json"),
+    import("@/ftbqkeys/kubejs/assets/kubejs/lang/zh_cn.json"),
+    import("@/ftbqkeys/kubejs/assets/kubejs/lang/auto.json"),
+  ]).then((res) => {
+    updateData(res[0].default, res[1].default, res[2].default);
+  });
+} else {
+  // 开发环境
+  caption = "开发者模式，可以修改";
+  // 从后端中读取文件
+  // 循环遍历 en_us 中的 key ，对应的寻找 zh_cn 与 auto 的 value 存贮至新建的 item 中
+  // 最后将item保存到data数组中
+  Promise.all([
+    getLangFileRequest("en_us"),
+    getLangFileRequest("zh_cn"),
+    getLangFileRequest("auto"),
+  ]).then((res) => {
+    updateData(res[0].data, res[1].data, res[2].data);
+  });
+}
 
 /**
  * @description 监听focusout事件
@@ -114,6 +120,19 @@ function focusout(item, event) {
       { key: item.key, value: item.cn },
       { headers: { "Content-Type": "application/json;charset=utf-8" } }
     );
+  }
+}
+
+/**
+ * @description 更新data数组
+ * @param en_us
+ * @param zh_cn
+ * @param auto
+ */
+function updateData(en_us, zh_cn, auto) {
+  data.value = [];
+  for (let key in en_us) {
+    data.value.push(new Item(key, en_us[key], zh_cn[key], auto[key]));
   }
 }
 </script>

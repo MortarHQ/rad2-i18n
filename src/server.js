@@ -3,14 +3,25 @@ import fs from "fs";
 import path from "path";
 import { fileURLToPath } from "url";
 import bodyParser from "body-parser";
-import network from "./api/network.json" assert { type: "json" };
+
+// 读取当前文件以及路径
+const __filename = fileURLToPath(import.meta.url);
+const __dirname = path.dirname(__filename);
+
+/* 读取配置文件 */
+const daemonConfig = JSON.parse(
+  fs.readFileSync(path.join(__dirname, "api/network.json"), "utf-8")
+);
+const webConfig = getServerConfig(
+  fs.readFileSync(path.join(__dirname, "..", "vite.config.js"), "utf-8")
+);
 
 const app = express();
 /* 后端配置 */
-const port = network.port;
-const host = network.host;
-const __filename = fileURLToPath(import.meta.url);
-const __dirname = path.dirname(__filename);
+const port = daemonConfig.port;
+const host = daemonConfig.host;
+const processArgs = process.argv.slice(2);
+const isPreview = processArgs.includes("--preview");
 
 /* 导入本地化文件 */
 // 文件路径
@@ -49,12 +60,23 @@ app.use((req, res, next) => {
 // 设置解析中间件
 app.use(bodyParser.json());
 
+// 预览设置
+if (isPreview) {
+  // 设置静态资源目录
+  app.use(express.static(path.join(__dirname, "..", "dist")));
+} else {
+  // 静态资源重定向"resource"路径
+  app.get("/", (req, res) => {
+    res.redirect(`http://${webConfig.host}:${webConfig.port}`);
+  });
+}
+
 // 处理预检请求
 app.options("/", (req, res) => {
   res.sendStatus(200);
 });
 
-app.get("/", (req, res) => {
+app.get("/resource", (req, res) => {
   switch (req.query.lang) {
     case "en_us":
       res.send(locales.en_us);
@@ -129,4 +151,21 @@ function log(message, req = undefined, res = undefined) {
   console.log(
     `${timestamp} ${ip} ${method} ${url} ${status} ${length} ${message}`
   );
+}
+
+// vite配置提取出server配置函数
+function getServerConfig(text) {
+  const serverObject = {};
+  let regex;
+  let match;
+  regex = /host[\s:]+"(\w*)"/;
+  match = text.match(regex);
+  serverObject.host = match[1];
+
+  // 匹配端口，可能是文本也可能是数字
+  regex = /port[\s]*:[\s]*(\d*)/;
+  match = text.match(regex);
+  serverObject.port = match[1];
+
+  return serverObject;
 }

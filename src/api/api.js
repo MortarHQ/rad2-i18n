@@ -1,5 +1,6 @@
 import network from "./network.json";
 import axios from "axios";
+const url = `http://${network.host}:${network.port}`;
 
 /**
  * @description 获取语言文件请求
@@ -7,9 +8,10 @@ import axios from "axios";
  * @returns {Promise<AxiosResponse<JSON>>}
  */
 async function getLangFileRequest(params) {
-  const url = new URL(`http://${network.host}:${network.port}`);
-  url.searchParams.set("lang", params);
-  return axios.get(url.href);
+  const uri = new URL(url);
+  uri.pathname = "/resource";
+  uri.searchParams.set("lang", params);
+  return axios.get(uri.href);
 }
 
 export { getLangFileRequest };
