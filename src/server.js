@@ -1,13 +1,14 @@
-import express, { json } from "express";
+import express from "express";
 import fs from "fs";
 import path from "path";
 import { fileURLToPath } from "url";
 import bodyParser from "body-parser";
+import network from "./api/network.json" assert { type: "json" };
 
 const app = express();
 /* 后端配置 */
-const port = 3032;
-const host = "localhost";
+const port = network.port;
+const host = network.host;
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
 
@@ -54,13 +55,27 @@ app.options("/", (req, res) => {
 });
 
 app.get("/", (req, res) => {
-  console.log(Date(), req.query);
-  // 发送提示
-  res.send(
-    `此为后端页面，请访问VITE前端服务。
+  switch (req.query.lang) {
+    case "en_us":
+      res.send(locales.en_us);
+      break;
+    case "zh_cn":
+      res.send(locales.zh_cn);
+      break;
+    case "auto":
+      res.send(locales.auto);
+      break;
+    default:
+      // 发送提示
+      res.send(
+        `此为后端页面，请访问VITE前端服务。
     <br/>
     一般是<a href="http://localhost:5173">http://localhost:5173</a>`
-  );
+      );
+  }
+
+  // 日志：记录时间 访问IP 访问参数
+  log(null, req, res);
 });
 
 // 根据传入的key-value，修改zh_cn中的对应文本
@@ -68,7 +83,7 @@ app.put("/", (req, res) => {
   // 允许body数据
   res.header("Content-Type", "application/json;charset=utf-8");
   // 日志：记录收到参数
-  console.log(Date(), req.body);
+  log(null, req, res);
   // 数据检验
   if (!req.body || !req.body.key || !req.body.value) {
     res.status(400).send("key和value不能为空");
@@ -93,3 +108,25 @@ app.put("/", (req, res) => {
 app.listen(port, () => {
   console.log(`Express app listening on http://${host}:${port}`);
 });
+
+// 日志函数
+function log(message, req = undefined, res = undefined) {
+  const date = new Date();
+  const timestamp = date.toLocaleString();
+  let ip;
+  let method;
+  let url;
+  let status;
+  let length;
+  if (typeof req !== "undefined" && typeof res !== "undefined") {
+    ip = req.ip;
+    method = req.method;
+    url = req.url;
+    status = res.statusCode;
+    length = res._headers["content-length"];
+  }
+
+  console.log(
+    `${timestamp} ${ip} ${method} ${url} ${status} ${length} ${message}`
+  );
+}

@@ -1,8 +1,11 @@
 <template>
   <header>
     <div>中英对照</div>
-    <a href="./package.zip"
-      >点我下载最新汉化包 package_v{{ packageJson.version }}.zip
+    <a href="./package.zip"  v-if="appConfig.environment === 'production'"">
+      <div>点我下载最新汉化包 package_v{{ packageJson.version }}.zip</div>
+    </a>
+    <a v-else>
+      <div>控制端输入npm run build即可编辑汉化包</div>
     </a>
   </header>
   <main>
@@ -21,6 +24,8 @@ import json from "body-parser/lib/types/json";
 const appConfig = reactive({
   describeFinishedText: false,
   describeAutoText: false,
+  // 运行环境
+  environment: process.env.NODE_ENV,
 });
 
 function updateToolsBarTriger(triger) {

@@ -22,14 +22,14 @@
         <td>
           <table>
             <tr>
-              <div v-text="item.en" class="noSpaceCollapse"></div>
+              <div v-text="item.en_us" class="noSpaceCollapse"></div>
             </tr>
             <tr>
               <div v-text="item.auto" class="noSpaceCollapse"></div>
             </tr>
-            <tr :class="{ noManul: !item.cn }">
+            <tr :class="{ noManul: !item.zh_cn }">
               <div
-                v-text="item.cn"
+                v-text="item.zh_cn"
                 class="noSpaceCollapse editable"
                 @focusout="focusout(item, $event)"
                 contenteditable
@@ -55,6 +55,7 @@
 
 import { ref } from "vue";
 import axios from "axios";
+import { getLangFileRequest } from "@/api/api";
 
 const props = defineProps({
   describeFinishedText: {
@@ -68,10 +69,10 @@ const props = defineProps({
 });
 
 class Item {
-  constructor(key, en, cn, auto) {
+  constructor(key, en_us, zh_cn, auto) {
     this.key = key;
-    this.en = en;
-    this.cn = cn;
+    this.en_us = en_us;
+    this.zh_cn = zh_cn;
     this.auto = auto;
   }
 }
@@ -80,17 +81,22 @@ let caption = "开发者模式，可以修改";
 if (process.env.NODE_ENV === "production")
   caption = "预览表，仅供预览，修改无效，禁止商业用途";
 
-import en from "@/ftbqkeys/kubejs/assets/kubejs/lang/en_us.json";
-import cn from "@/ftbqkeys/kubejs/assets/kubejs/lang/zh_cn.json";
-import auto from "@/ftbqkeys/kubejs/assets/kubejs/lang/auto.json";
-import { watch } from "vue";
-
-// 循环遍历en中的key，对应的寻找cn与auto的value存贮至新建的item中
+// 循环遍历 en_us 中的 key ，对应的寻找 zh_cn 与 auto 的 value 存贮至新建的 item 中
 // 最后将item保存到data数组中
 let data = ref([]);
-for (let key in en) {
-  data.value.push(new Item(key, en[key], cn[key] || "", auto[key] || ""));
-}
+// 从后端中读取文件
+Promise.all([
+  getLangFileRequest("en_us"),
+  getLangFileRequest("zh_cn"),
+  getLangFileRequest("auto"),
+]).then((res) => {
+  const en_us = res[0].data;
+  const zh_cn = res[1].data;
+  const auto = res[2].data;
+  for (let key in en_us) {
+    data.value.push(new Item(key, en_us[key], zh_cn[key], auto[key]));
+  }
+});
 
 /**
  * @description 监听focusout事件
