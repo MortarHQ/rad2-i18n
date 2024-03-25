@@ -35,6 +35,7 @@ output.on("close", function () {
 });
 
 archive.on("error", function (err) {
+  console.log("压缩出错");
   throw err;
 });
 
