@@ -102,19 +102,33 @@ app.get("/resource", (req, res) => {
 
 // 根据传入的key-value，修改zh_cn中的对应文本
 app.put("/", (req, res) => {
+  // tip 提示
+  let tip;
   // 允许body数据
   res.header("Content-Type", "application/json;charset=utf-8");
-  // 日志：记录收到参数
-  log(null, req, res);
   // 数据检验
-  if (!req.body || !req.body.key || !req.body.value) {
-    res.status(400).send("key和value不能为空");
+  if (!req.body || !req.body.key) {
+    tip = "key不能为空";
+    res.status(400).send(tip);
+    log(tip, req, res);
     return;
   }
   const { key, value } = req.body;
   // 不允许新增key
   if (!key in locales.zh_cn) {
-    res.status(400).send("key不存在");
+    tip = "key不存在";
+    res.status(400).send(tip);
+    log(tip, req, res);
+    return;
+  }
+
+  const originValue = locales.zh_cn[key];
+  // 值校验
+  if (originValue === value) {
+    // 值相同，不用更改
+    tip = "值相同";
+    res.status(400).send(tip);
+    log(tip, req, res);
     return;
   }
 
@@ -125,6 +139,10 @@ app.put("/", (req, res) => {
     JSON.stringify(locales.zh_cn, null, 2)
   );
   res.status(200).send("修改成功");
+
+  // 日志：记录本次操作
+  tip = `${key}："${originValue}" ==> "${value}"`;
+  log(tip, req, res);
 });
 
 app.listen(port, () => {
@@ -149,7 +167,7 @@ function log(message, req = undefined, res = undefined) {
   }
 
   console.log(
-    `${timestamp} ${ip} ${method} ${url} ${status} ${length} ${message}`
+    `${timestamp} ${ip} ${method} URL:${url} Status:${status} Length:${length} Message:${message}`
   );
 }
 
