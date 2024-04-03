@@ -1,5 +1,11 @@
-// 下面是node脚本，非vue模板
-// 使用了esmodule，非commonjs
+/**
+ * 本js文件用于合并zh_cn.json与other.json，将文件输出为merged.json，异常错误输出至error.json
+ *
+ *
+ * 下面是node脚本，非vue模板
+ * 使用了esmodule，非commonjs
+ */
+
 import fs from "fs";
 import path from "path";
 import { fileURLToPath } from "url";
