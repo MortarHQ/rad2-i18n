@@ -4,7 +4,8 @@
 这篇教程会教你如何向RAD2汉化进行贡献。  
 项目对应RAD2版本：v1.10a
 
-敬告：相当大部分汉化内容来自于[https://www.bilibili.com/read/cv21811913/](https://www.bilibili.com/read/cv21811913/)，请尊重原汉化作者。  
+**敬告：**  
+相当大部分汉化内容来自于[https://www.bilibili.com/read/cv21811913/](https://www.bilibili.com/read/cv21811913/)，请尊重原汉化作者。  
 本项目翻译预览请见[https://landminehq.github.io/rad2-i18n/](https://landminehq.github.io/rad2-i18n/)。
 
 ## 使用的IDE
