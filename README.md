@@ -2,7 +2,9 @@
 
 注意，此汉化为无授权汉化，不可用于商业用途。  
 这篇教程会教你如何向RAD2汉化进行贡献。  
-翻译预览请见[https://landminehq.github.io/rad2-i18n/](https://landminehq.github.io/rad2-i18n/)
+
+敬告：相当大部分汉化内容来自于[https://www.bilibili.com/read/cv21811913/](https://www.bilibili.com/read/cv21811913/)，请尊重原汉化作者。
+本项目翻译预览请见[https://landminehq.github.io/rad2-i18n/](https://landminehq.github.io/rad2-i18n/)。
 
 ## 使用的IDE
 
