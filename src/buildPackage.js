@@ -34,7 +34,7 @@ const archive = archiver("zip", {
 });
 
 // 下面开始处理zh_cn.json
-// 读取zh_cn.json, en_us.json , auto.json
+// 读取manual.json, en_us.json , zh_cn.json
 const manual = JSON.parse(
   fs.readFileSync(
     path.join(__dirname, "ftbqkeys/kubejs/assets/kubejs/lang/manual.json"),
@@ -55,7 +55,7 @@ const zh_cn = JSON.parse(
 );
 // 合并zh_cn.json与en_us.json
 for (let key in en_us) {
-  if (!/^[\s]*$/.test(manual[key])) continue; // zh_cn已有非空内容
+  if (!/^[\s]*$/.test(manual[key])) continue; // manual已有非空内容
   let value = en_us[key]; // 原文内容
   if (key in zh_cn) value += "\n\n" + zh_cn[key]; // 自动补充机翻内容
   manual[key] = value; // 修改zh_cn.json
