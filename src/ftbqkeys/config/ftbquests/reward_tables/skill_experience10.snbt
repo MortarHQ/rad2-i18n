@@ -8,56 +8,42 @@
 		{
 			auto: "invisible"
 			skill: "gathering"
-			amount: 1000.0d
-			ignoreBonuses: false
-			type: "pmmo:xpreward"
-		}
-		{
-			auto: "invisible"
-			skill: "combat"
-			amount: 1000.0d
+			amount: 200.0d
 			ignoreBonuses: false
 			type: "pmmo:xpreward"
 		}
 		{
 			auto: "invisible"
 			skill: "magic"
-			amount: 1000.0d
-			ignoreBonuses: false
-			type: "pmmo:xpreward"
-		}
-		{
-			auto: "invisible"
-			skill: "endurance"
-			amount: 1000.0d
+			amount: 200.0d
 			ignoreBonuses: false
 			type: "pmmo:xpreward"
 		}
 		{
 			auto: "invisible"
 			skill: "smithing"
-			amount: 1000.0d
+			amount: 200.0d
 			ignoreBonuses: false
 			type: "pmmo:xpreward"
 		}
 		{
 			auto: "invisible"
 			skill: "farming"
-			amount: 1000.0d
+			amount: 200.0d
 			ignoreBonuses: false
 			type: "pmmo:xpreward"
 		}
 		{
 			auto: "invisible"
 			skill: "flying"
-			amount: 1000.0d
+			amount: 200.0d
 			ignoreBonuses: false
 			type: "pmmo:xpreward"
 		}
 		{
 			auto: "invisible"
 			skill: "archery"
-			amount: 1000.0d
+			amount: 200.0d
 			ignoreBonuses: false
 			type: "pmmo:xpreward"
 		}

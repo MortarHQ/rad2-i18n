@@ -29,19 +29,19 @@ const localesPath = path.join(__dirname, "ftbqkeys/kubejs/assets/kubejs/lang");
 
 const locales = {
   en_us: null,
+  manual: null,
   zh_cn: null,
-  auto: null,
 };
 
 try {
   locales.en_us = JSON.parse(
     fs.readFileSync(`${localesPath}/en_us.json`, "utf-8")
   );
+  locales.manual = JSON.parse(
+    fs.readFileSync(`${localesPath}/manual.json`, "utf-8")
+  );
   locales.zh_cn = JSON.parse(
     fs.readFileSync(`${localesPath}/zh_cn.json`, "utf-8")
-  );
-  locales.auto = JSON.parse(
-    fs.readFileSync(`${localesPath}/auto.json`, "utf-8")
   );
 } catch (error) {
   console.log(error);
@@ -82,10 +82,10 @@ app.get("/resource", (req, res) => {
       res.send(locales.en_us);
       break;
     case "zh_cn":
-      res.send(locales.zh_cn);
+      res.send(locales.manual);
       break;
     case "auto":
-      res.send(locales.auto);
+      res.send(locales.zh_cn);
       break;
     default:
       // 发送提示
@@ -115,14 +115,14 @@ app.put("/", (req, res) => {
   }
   const { key, value } = req.body;
   // 不允许新增key
-  if (!key in locales.zh_cn) {
+  if (!key in locales.manual) {
     tip = "key不存在";
     res.status(400).send(tip);
     log(tip, req, res);
     return;
   }
 
-  const originValue = locales.zh_cn[key];
+  const originValue = locales.manual[key];
   // 值校验
   if (originValue === value) {
     // 值相同，不用更改
@@ -132,11 +132,11 @@ app.put("/", (req, res) => {
     return;
   }
 
-  locales.zh_cn[key] = value;
+  locales.manual[key] = value;
 
   fs.writeFileSync(
     `${localesPath}/zh_cn.json`,
-    JSON.stringify(locales.zh_cn, null, 2)
+    JSON.stringify(locales.manual, null, 2)
   );
   res.status(200).send("修改成功");
 

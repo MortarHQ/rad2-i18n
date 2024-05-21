@@ -6,7 +6,7 @@
 
 **敬告：**  
 相当大部分汉化内容来自于[https://www.bilibili.com/read/cv21811913/](https://www.bilibili.com/read/cv21811913/)，请尊重原汉化作者。  
-本项目翻译预览请见[https://landminehq.github.io/rad2-i18n/](https://landminehq.github.io/rad2-i18n/)。
+本项目翻译预览请见[https://mortarhq.github.io/rad2-i18n/](https://mortarhq.github.io/rad2-i18n/)。
 
 ## 使用的IDE
 

@@ -779,7 +779,7 @@
 			]
 		}
 		{
-			x: 4.0d
+			x: 8.0d
 			y: -3.5d
 			description: ["{chapter.8.quest.27.description.1}"]
 			dependencies: ["742FA17F32B5562D"]
@@ -834,8 +834,8 @@
 		}
 		{
 			title: "{chapter.8.quest.30.title}"
-			x: 9.0d
-			y: -5.0d
+			x: 12.5d
+			y: -3.5d
 			description: ["{chapter.8.quest.30.description.1}"]
 			dependencies: ["55DCE2FA47D4C837"]
 			id: "5E4164741B56B1BC"
@@ -871,8 +871,8 @@
 			]
 		}
 		{
-			x: 10.5d
-			y: -6.0d
+			x: 13.0d
+			y: -5.0d
 			description: ["{chapter.8.quest.31.description.1}"]
 			dependencies: ["5E4164741B56B1BC"]
 			id: "254E533B919E0141"
@@ -947,10 +947,10 @@
 			]
 		}
 		{
-			x: 12.5d
-			y: -3.5d
+			x: 4.0d
+			y: 3.5d
 			description: ["{chapter.8.quest.32.description.1}"]
-			dependencies: ["55DCE2FA47D4C837"]
+			dependencies: ["3D208B95463DFD24"]
 			id: "6E047390333830E1"
 			tasks: [{
 				id: "35D9D17378CFBBF4"
@@ -977,10 +977,10 @@
 			]
 		}
 		{
-			x: 12.5d
+			x: 9.0d
 			y: -5.0d
 			description: ["{chapter.8.quest.33.description.1}"]
-			dependencies: ["6E047390333830E1"]
+			dependencies: ["5E2DFA9A653F3619"]
 			id: "16BC2746E4DD50B9"
 			tasks: [{
 				id: "481BAE1D47E8E4C7"
@@ -1004,7 +1004,7 @@
 			x: 5.5d
 			y: 3.5d
 			description: ["{chapter.8.quest.34.description.1}"]
-			dependencies: ["3D208B95463DFD24"]
+			dependencies: ["6E047390333830E1"]
 			id: "0B56F802933E9AB7"
 			tasks: [{
 				id: "78DBEF6A0D0A5E13"
@@ -2726,8 +2726,8 @@
 			}]
 		}
 		{
-			x: 4.0d
-			y: -1.5d
+			x: 7.5d
+			y: -5.0d
 			description: ["{chapter.8.quest.74.description.1}"]
 			dependencies: ["5E2DFA9A653F3619"]
 			id: "44246B5F76798F22"
@@ -2763,9 +2763,9 @@
 			}]
 		}
 		{
-			x: 1.5d
-			y: 2.5d
-			dependencies: ["3D208B95463DFD24"]
+			x: 10.5d
+			y: -1.5d
+			dependencies: ["55DCE2FA47D4C837"]
 			id: "3435DF9BFA69769A"
 			tasks: [{
 				id: "65990C5B2574D905"
@@ -3301,7 +3301,7 @@
 			}]
 		}
 		{
-			x: 2.0d
+			x: -1.5d
 			y: 1.0d
 			subtitle: "{chapter.8.quest.91.subtitle}"
 			dependencies: ["211D755718A5FF50"]
@@ -3412,195 +3412,14 @@
 			]
 		}
 		{
-			x: 11.0d
-			y: 1.0d
-			dependencies: ["4424404688C4DA49"]
-			id: "4FDAE4EF717B3D17"
-			tasks: [
-				{
-					id: "3C72D0348681D973"
-					type: "item"
-					item: {
-						id: "pickletweaks:emerald_helmet"
-						Count: 1b
-						tag: {
-							Damage: 0
-						}
-						ForgeCaps: {
-							"dungeons_libraries:built_in_enchantments": {
-								BuiltInEnchantments: [ ]
-							}
-						}
-					}
-				}
-				{
-					id: "3B9981D1454EA2B0"
-					type: "item"
-					item: {
-						id: "pickletweaks:emerald_chestplate"
-						Count: 1b
-						tag: {
-							Damage: 0
-						}
-						ForgeCaps: {
-							"dungeons_libraries:built_in_enchantments": {
-								BuiltInEnchantments: [ ]
-							}
-						}
-					}
-				}
-				{
-					id: "36FC54B63DA44979"
-					type: "item"
-					item: {
-						id: "pickletweaks:emerald_leggings"
-						Count: 1b
-						tag: {
-							Damage: 0
-						}
-						ForgeCaps: {
-							"dungeons_libraries:built_in_enchantments": {
-								BuiltInEnchantments: [ ]
-							}
-						}
-					}
-				}
-				{
-					id: "47639D2E48C04E0A"
-					type: "item"
-					item: {
-						id: "pickletweaks:emerald_boots"
-						Count: 1b
-						tag: {
-							Damage: 0
-						}
-						ForgeCaps: {
-							"dungeons_libraries:built_in_enchantments": {
-								BuiltInEnchantments: [ ]
-							}
-						}
-					}
-				}
-			]
-			rewards: [{
-				id: "200FCB27CFA91615"
-				type: "item"
-				item: {
-					id: "ftbquests:lootcrate"
-					Count: 1b
-					tag: {
-						type: "ingots_valuable"
-						rpgloot.randomize: 0b
-					}
-					ForgeCaps: {
-						"dungeons_libraries:built_in_enchantments": {
-							BuiltInEnchantments: [ ]
-						}
-					}
-				}
-				random_bonus: 2
-			}]
-		}
-		{
-			x: 11.0d
-			y: 0.0d
-			dependencies: ["4424404688C4DA49"]
-			id: "75173BE046C1EC0C"
-			tasks: [{
-				id: "1EF60119D4609A69"
-				type: "item"
-				item: {
-					id: "pickletweaks:emerald_pickaxe"
-					Count: 1b
-					tag: {
-						Damage: 0
-					}
-				}
-			}]
-			rewards: [
-				{
-					id: "2A771FCB581423EE"
-					type: "item"
-					item: {
-						id: "minecraft:potion"
-						Count: 1b
-						tag: {
-							Potion: "infernalexp:luminous"
-						}
-					}
-				}
-				{
-					id: "6F4AB17B0B74548A"
-					type: "item"
-					item: "minecraft:golden_carrot"
-				}
-				{
-					id: "53CF0F60967BA2DA"
-					type: "ftbmoney:money"
-					ftb_money: 10L
-				}
-				{
-					id: "41BCE5804FAA988B"
-					type: "item"
-					item: "randomite:randomite_ore"
-				}
-			]
-		}
-		{
 			x: 10.0d
-			y: 0.5d
-			description: ["{chapter.8.quest.96.description.1}"]
-			dependencies: ["46966AA1DDAD75DC"]
-			id: "4424404688C4DA49"
-			tasks: [{
-				id: "186FA8D929263C25"
-				type: "item"
-				item: {
-					id: "kubejs:emerald_ingot"
-					Count: 1b
-					ForgeCaps: {
-						"dungeons_libraries:built_in_enchantments": {
-							BuiltInEnchantments: [ ]
-						}
-					}
-				}
-			}]
-			rewards: [
-				{
-					id: "691F95B6F4BECFAB"
-					type: "item"
-					item: {
-						id: "pickletweaks:emerald_apple"
-						Count: 1b
-						ForgeCaps: {
-							"dungeons_libraries:built_in_enchantments": {
-								BuiltInEnchantments: [ ]
-							}
-						}
-					}
-				}
-				{
-					id: "5B0C3EF4302887CD"
-					type: "item"
-					item: {
-						id: "betterendforge:terminite_nugget"
-						Count: 1b
-						ForgeCaps: {
-							"dungeons_libraries:built_in_enchantments": {
-								BuiltInEnchantments: [ ]
-							}
-						}
-					}
-					random_bonus: 8
-				}
+			y: -3.5d
+			subtitle: "{chapter.8.quest.94.subtitle}"
+			description: ["{chapter.8.quest.94.description.1}"]
+			dependencies: [
+				"5E4164741B56B1BC"
+				"16BC2746E4DD50B9"
 			]
-		}
-		{
-			x: 7.5d
-			y: -5.5d
-			subtitle: "{chapter.8.quest.97.subtitle}"
-			description: ["{chapter.8.quest.97.description.1}"]
-			dependencies: ["5E4164741B56B1BC"]
 			id: "601C88472CB41587"
 			tasks: [{
 				id: "53146C51116A8DBB"
@@ -3653,7 +3472,7 @@
 			x: 2.5d
 			y: 4.5d
 			shape: "diamond"
-			description: ["{chapter.8.quest.98.description.1}"]
+			description: ["{chapter.8.quest.95.description.1}"]
 			dependencies: ["3D208B95463DFD24"]
 			id: "79BFE48B969A1C28"
 			tasks: [{
@@ -3687,7 +3506,7 @@
 		{
 			x: 2.5d
 			y: -6.0d
-			description: ["{chapter.8.quest.99.description.1}"]
+			description: ["{chapter.8.quest.96.description.1}"]
 			dependencies: ["3697C11949A0A907"]
 			id: "328111EAA4D59A8E"
 			tasks: [{
@@ -3721,7 +3540,7 @@
 		{
 			x: 3.0d
 			y: -8.0d
-			description: ["{chapter.8.quest.100.description.1}"]
+			description: ["{chapter.8.quest.97.description.1}"]
 			dependencies: ["328111EAA4D59A8E"]
 			id: "379506F627A084C9"
 			tasks: [
@@ -3814,10 +3633,10 @@
 			]
 		}
 		{
-			title: "{chapter.8.quest.101.title}"
+			title: "{chapter.8.quest.98.title}"
 			x: 4.0d
 			y: -7.5d
-			description: ["{chapter.8.quest.101.description.1}"]
+			description: ["{chapter.8.quest.98.description.1}"]
 			dependencies: ["328111EAA4D59A8E"]
 			id: "47C6889BA9DA6B71"
 			tasks: [
@@ -3927,7 +3746,7 @@
 		{
 			x: 3.0d
 			y: -5.0d
-			description: ["{chapter.8.quest.102.description.1}"]
+			description: ["{chapter.8.quest.99.description.1}"]
 			dependencies: ["3697C11949A0A907"]
 			id: "7059E391B00B0081"
 			tasks: [{
@@ -3959,10 +3778,10 @@
 			}]
 		}
 		{
-			title: "{chapter.8.quest.103.title}"
+			title: "{chapter.8.quest.100.title}"
 			x: 4.5d
 			y: -6.5d
-			description: ["{chapter.8.quest.103.description.1}"]
+			description: ["{chapter.8.quest.100.description.1}"]
 			dependencies: ["7059E391B00B0081"]
 			id: "7F37BC388DA180A2"
 			tasks: [
@@ -4051,7 +3870,7 @@
 				{
 					id: "2398DAC7C2788FE7"
 					type: "pmmo:xpreward"
-					title: "{chapter.8.quest.103.reward.1.title}"
+					title: "{chapter.8.quest.100.reward.1.title}"
 					icon: {
 						id: "kubejs:mine"
 						Count: 1b
@@ -4069,7 +3888,7 @@
 				{
 					id: "5F21FE249BDD2172"
 					type: "choice"
-					title: "{chapter.8.quest.103.reward.2.title}"
+					title: "{chapter.8.quest.100.reward.2.title}"
 					table_id: 5735513140715080140L
 				}
 			]
@@ -4077,7 +3896,7 @@
 		{
 			x: 5.0d
 			y: -5.5d
-			description: ["{chapter.8.quest.104.description.1}"]
+			description: ["{chapter.8.quest.101.description.1}"]
 			dependencies: ["7059E391B00B0081"]
 			id: "4898675B39433EDA"
 			tasks: [
@@ -4150,7 +3969,7 @@
 				{
 					id: "32E40A75F30DC43A"
 					type: "pmmo:xpreward"
-					title: "{chapter.8.quest.104.reward.1.title}"
+					title: "{chapter.8.quest.101.reward.1.title}"
 					icon: {
 						id: "kubejs:shield"
 						Count: 1b
@@ -4168,7 +3987,7 @@
 				{
 					id: "169F474CEF6FC639"
 					type: "choice"
-					title: "{chapter.8.quest.104.reward.2.title}"
+					title: "{chapter.8.quest.101.reward.2.title}"
 					table_id: 5735513140715080140L
 				}
 			]
@@ -4176,8 +3995,8 @@
 		{
 			x: 1.0d
 			y: 5.5d
-			subtitle: "{chapter.8.quest.105.subtitle}"
-			description: ["{chapter.8.quest.105.description.1}"]
+			subtitle: "{chapter.8.quest.102.subtitle}"
+			description: ["{chapter.8.quest.102.description.1}"]
 			dependencies: ["3D208B95463DFD24"]
 			id: "311E972978EC5627"
 			tasks: [{
@@ -4211,7 +4030,7 @@
 		{
 			x: 4.5d
 			y: -4.5d
-			description: ["{chapter.8.quest.106.description.1}"]
+			description: ["{chapter.8.quest.103.description.1}"]
 			dependencies: ["3697C11949A0A907"]
 			id: "1BEA85235B47FA5B"
 			tasks: [{
@@ -4243,8 +4062,8 @@
 		{
 			x: 6.0d
 			y: -4.5d
-			subtitle: "{chapter.8.quest.107.subtitle}"
-			description: ["{chapter.8.quest.107.description.1}"]
+			subtitle: "{chapter.8.quest.104.subtitle}"
+			description: ["{chapter.8.quest.104.description.1}"]
 			dependencies: ["1BEA85235B47FA5B"]
 			id: "2DA5966E41A21CA7"
 			tasks: [{
@@ -4291,6 +4110,218 @@
 					table_id: 4734148794142699034L
 				}
 			]
+		}
+		{
+			title: "{chapter.8.quest.105.title}"
+			icon: {
+				id: "betterendforge:iron_hammer"
+				Count: 1b
+				tag: {
+					Damage: 0
+				}
+				ForgeCaps: {
+					"dungeons_libraries:built_in_enchantments": {
+						BuiltInEnchantments: [ ]
+					}
+				}
+			}
+			x: 4.5d
+			y: 2.5d
+			description: ["{chapter.8.quest.105.description.1}"]
+			dependencies: ["6E047390333830E1"]
+			id: "28DC4D88F4756D4D"
+			tasks: [{
+				id: "7B8E7F01FE2474A8"
+				type: "item"
+				title: "{chapter.8.quest.105.task.1.title}"
+				item: {
+					id: "itemfilters:tag"
+					Count: 1b
+					tag: {
+						value: "betterendforge:hammers"
+					}
+				}
+			}]
+			rewards: [{
+				id: "2621F2024D2823EF"
+				type: "item"
+				item: {
+					id: "betterendforge:ender_shard"
+					Count: 1b
+					ForgeCaps: {
+						"dungeons_libraries:built_in_enchantments": {
+							BuiltInEnchantments: [ ]
+						}
+					}
+				}
+			}]
+		}
+		{
+			x: 12.0d
+			y: -6.0d
+			description: ["{chapter.8.quest.106.description.1}"]
+			dependencies: ["12C88C7765D6E19C"]
+			id: "32D7534501B08A47"
+			tasks: [{
+				id: "191DD1357DB5CE05"
+				type: "item"
+				item: {
+					id: "quark:ancient_tome"
+					Count: 1b
+					tag: { }
+					ForgeCaps: {
+						"dungeons_libraries:built_in_enchantments": {
+							BuiltInEnchantments: [ ]
+						}
+					}
+				}
+				match_nbt: false
+				weak_nbt_match: true
+			}]
+			rewards: [{
+				id: "1AF39DC0EFEC0682"
+				type: "item"
+				item: {
+					id: "randomite:randomite_ore"
+					Count: 1b
+					ForgeCaps: {
+						"dungeons_libraries:built_in_enchantments": {
+							BuiltInEnchantments: [ ]
+						}
+					}
+				}
+				count: 3
+			}]
+		}
+		{
+			x: 3.0d
+			y: 1.5d
+			dependencies: ["3D208B95463DFD24"]
+			id: "781AF715393AA4A9"
+			tasks: [{
+				id: "3FFA8BE145571536"
+				type: "item"
+				item: {
+					id: "minecraft:dragon_breath"
+					Count: 1b
+					ForgeCaps: {
+						"dungeons_libraries:built_in_enchantments": {
+							BuiltInEnchantments: [ ]
+						}
+					}
+				}
+			}]
+			rewards: [{
+				id: "22937DBE001DDCF5"
+				type: "item"
+				item: {
+					id: "randomite:randomite_ore"
+					Count: 1b
+					ForgeCaps: {
+						"dungeons_libraries:built_in_enchantments": {
+							BuiltInEnchantments: [ ]
+						}
+					}
+				}
+			}]
+		}
+		{
+			x: 10.5d
+			y: -6.0d
+			description: ["{chapter.8.quest.108.description.1}"]
+			id: "12C88C7765D6E19C"
+			tasks: [{
+				id: "4E28C0F0674D30EB"
+				type: "item"
+				item: {
+					id: "betterendforge:hydralux_petal"
+					Count: 1b
+					ForgeCaps: {
+						"dungeons_libraries:built_in_enchantments": {
+							BuiltInEnchantments: [ ]
+						}
+					}
+				}
+			}]
+			rewards: [
+				{
+					id: "5A24998F25B0580C"
+					type: "item"
+					item: {
+						id: "byg:lignite"
+						Count: 1b
+						ForgeCaps: {
+							"dungeons_libraries:built_in_enchantments": {
+								BuiltInEnchantments: [ ]
+							}
+						}
+					}
+					count: 2
+					random_bonus: 1
+				}
+				{
+					id: "356017B009DCB0DE"
+					type: "item"
+					item: {
+						id: "minecraft:bone_meal"
+						Count: 1b
+						ForgeCaps: {
+							"dungeons_libraries:built_in_enchantments": {
+								BuiltInEnchantments: [ ]
+							}
+						}
+					}
+					count: 2
+					random_bonus: 1
+				}
+			]
+		}
+		{
+			title: "{chapter.8.quest.109.title}"
+			icon: {
+				id: "alexsmobs:tab_icon"
+				Count: 1b
+				tag: {
+					DisplayEntityType: "minecraft:endermite"
+				}
+				ForgeCaps: {
+					"dungeons_libraries:built_in_enchantments": {
+						BuiltInEnchantments: [ ]
+					}
+				}
+			}
+			x: -2.5d
+			y: 4.5d
+			subtitle: "{chapter.8.quest.109.subtitle}"
+			description: ["{chapter.8.quest.109.description.1}"]
+			dependencies: ["3D208B95463DFD24"]
+			optional: true
+			secret: true
+			id: "164E229368D10620"
+			tasks: [{
+				id: "215116A2D221053C"
+				type: "questsadditions:break"
+				title: "{chapter.8.quest.109.task.1.title}"
+				block: "majruszs_difficulty:infested_end_stone"
+				value: 1L
+				checkItem: false
+			}]
+			rewards: [{
+				id: "4A528530A0842ABE"
+				type: "item"
+				item: {
+					id: "minecraft:splash_potion"
+					Count: 1b
+					tag: {
+						Potion: "minecraft:strong_harming"
+					}
+					ForgeCaps: {
+						"dungeons_libraries:built_in_enchantments": {
+							BuiltInEnchantments: [ ]
+						}
+					}
+				}
+			}]
 		}
 	]
 }

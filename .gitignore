@@ -28,3 +28,7 @@ coverage
 *.sw?
 
 *.tsbuildinfo
+
+# 合并内容不进行更新
+src/autoMerge/error.json
+src/autoMerge/merged.json

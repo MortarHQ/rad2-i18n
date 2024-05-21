@@ -662,35 +662,22 @@
 			}]
 		}
 		{
-			title: "{chapter.4.quest.27.title}"
-			x: 7.0d
-			y: 4.5d
-			subtitle: "{chapter.4.quest.27.subtitle}"
-			id: "7F643383AC98A054"
-			tasks: [{
-				id: "6E6251E2BE42E90F"
-				type: "advancement"
-				advancement: "rad_recipes:mad_mage"
-				criterion: ""
-			}]
-		}
-		{
 			icon: "minecraft:spawner"
 			x: 6.0d
 			y: 6.0d
-			subtitle: "{chapter.4.quest.28.subtitle}"
-			description: ["{chapter.4.quest.28.description.1}"]
+			subtitle: "{chapter.4.quest.27.subtitle}"
+			description: ["{chapter.4.quest.27.description.1}"]
 			dependencies: ["40FF66BE65AF171D"]
 			id: "4B455D9DA6A65FFC"
 			tasks: [{
 				id: "13D3A43216E49AE5"
 				type: "checkmark"
-				title: "{chapter.4.quest.28.task.1.title}"
+				title: "{chapter.4.quest.27.task.1.title}"
 			}]
 			rewards: [{
 				id: "74215E966E019CB8"
 				type: "command"
-				title: "{chapter.4.quest.28.reward.1.title}"
+				title: "{chapter.4.quest.27.reward.1.title}"
 				icon: {
 					id: "titles:title_scroll_uncommon"
 					Count: 1b
@@ -711,22 +698,22 @@
 			}]
 		}
 		{
-			title: "{chapter.4.quest.29.title}"
+			title: "{chapter.4.quest.28.title}"
 			icon: "twilightforest:time_sapling"
 			x: -1.5d
 			y: 7.5d
-			subtitle: "{chapter.4.quest.29.subtitle}"
-			description: ["{chapter.4.quest.29.description.1}"]
+			subtitle: "{chapter.4.quest.28.subtitle}"
+			description: ["{chapter.4.quest.28.description.1}"]
 			dependencies: ["50408E199382BDCD"]
 			id: "4004EFD371791C82"
 			tasks: [{
 				id: "545571FE4CECB9D2"
 				type: "checkmark"
-				title: "{chapter.4.quest.29.task.1.title}"
+				title: "{chapter.4.quest.28.task.1.title}"
 			}]
 		}
 		{
-			title: "{chapter.4.quest.30.title}"
+			title: "{chapter.4.quest.29.title}"
 			icon: {
 				id: "blue_skies:starlit_crusher_trophy"
 				Count: 1b
@@ -743,7 +730,7 @@
 			}
 			x: 0.0d
 			y: 7.5d
-			description: ["{chapter.4.quest.30.description.1}"]
+			description: ["{chapter.4.quest.29.description.1}"]
 			id: "7BC6161ED22064D1"
 			tasks: [{
 				id: "5ED6B8142FB84F6A"
@@ -753,7 +740,7 @@
 			}]
 		}
 		{
-			title: "{chapter.4.quest.31.title}"
+			title: "{chapter.4.quest.30.title}"
 			icon: {
 				id: "blue_skies:arachnarch_trophy"
 				Count: 1b
@@ -770,13 +757,85 @@
 			}
 			x: 1.5d
 			y: 7.5d
-			description: ["{chapter.4.quest.31.description.1}"]
+			description: ["{chapter.4.quest.30.description.1}"]
 			id: "1182309200FF1818"
 			tasks: [{
 				id: "469A3603137B4CFE"
 				type: "advancement"
 				advancement: "blue_skies:everdawn/kill_arachnarch"
 				criterion: ""
+			}]
+		}
+		{
+			title: "{chapter.4.quest.31.title}"
+			icon: {
+				id: "losttrinkets:tha_wizard"
+				Count: 1b
+				tag: {
+					RepairCost: 1
+					"quark:RuneAttached": 1b
+					Enchantments: [{
+						lvl: 3s
+						id: "ars_nouveau:reactive"
+					}]
+					"quark:RuneColor": {
+						ForgeCaps: {
+							"dungeons_libraries:built_in_enchantments": {
+								BuiltInEnchantments: [ ]
+							}
+						}
+						id: "quark:red_rune"
+						Count: 1b
+					}
+				}
+				ForgeCaps: {
+					"dungeons_libraries:built_in_enchantments": {
+						BuiltInEnchantments: [ ]
+					}
+				}
+			}
+			x: 7.0d
+			y: 4.5d
+			description: ["{chapter.4.quest.31.description.1}"]
+			dependencies: ["2FD36B1AF21BF370"]
+			id: "7F643383AC98A054"
+			tasks: [{
+				id: "41376730E7DEBF5E"
+				type: "checkmark"
+				title: "{chapter.4.quest.31.task.1.title}"
+			}]
+			rewards: [{
+				id: "1F01B4A8483A413F"
+				type: "command"
+				title: "{chapter.4.quest.31.reward.1.title}"
+				icon: {
+					id: "titles:title_scroll_rare"
+					Count: 1b
+					tag: {
+						RepairCost: 1
+						"quark:RuneAttached": 1b
+						Enchantments: [{
+							lvl: 3s
+							id: "ars_nouveau:reactive"
+						}]
+						"quark:RuneColor": {
+							ForgeCaps: {
+								"dungeons_libraries:built_in_enchantments": {
+									BuiltInEnchantments: [ ]
+								}
+							}
+							id: "quark:pink_rune"
+							Count: 1b
+						}
+					}
+					ForgeCaps: {
+						"dungeons_libraries:built_in_enchantments": {
+							BuiltInEnchantments: [ ]
+						}
+					}
+				}
+				command: "/titles add @p rad_recipes:mad_mage"
+				player_command: false
 			}]
 		}
 	]

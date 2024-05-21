@@ -84,8 +84,8 @@ if (process.env.NODE_ENV === "production") {
   caption = "预览表，仅供预览，修改无效，禁止商业用途";
   Promise.all([
     import("@/ftbqkeys/kubejs/assets/kubejs/lang/en_us.json"),
+    import("@/ftbqkeys/kubejs/assets/kubejs/lang/manual.json"),
     import("@/ftbqkeys/kubejs/assets/kubejs/lang/zh_cn.json"),
-    import("@/ftbqkeys/kubejs/assets/kubejs/lang/auto.json"),
   ]).then((res) => {
     updateData(res[0].default, res[1].default, res[2].default);
   });
@@ -126,13 +126,13 @@ function focusout(item, event) {
 /**
  * @description 更新data数组
  * @param en_us
+ * @param manual
  * @param zh_cn
- * @param auto
  */
-function updateData(en_us, zh_cn, auto) {
+function updateData(en_us, manual, zh_cn) {
   data.value = [];
   for (let key in en_us) {
-    data.value.push(new Item(key, en_us[key], zh_cn[key], auto[key]));
+    data.value.push(new Item(key, en_us[key], manual[key], zh_cn[key]));
   }
 }
 </script>

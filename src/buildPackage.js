@@ -35,9 +35,9 @@ const archive = archiver("zip", {
 
 // 下面开始处理zh_cn.json
 // 读取zh_cn.json, en_us.json , auto.json
-const zh_cn = JSON.parse(
+const manual = JSON.parse(
   fs.readFileSync(
-    path.join(__dirname, "ftbqkeys/kubejs/assets/kubejs/lang/zh_cn.json"),
+    path.join(__dirname, "ftbqkeys/kubejs/assets/kubejs/lang/manual.json"),
     "utf-8"
   )
 );
@@ -47,18 +47,18 @@ const en_us = JSON.parse(
     "utf-8"
   )
 );
-const auto = JSON.parse(
+const zh_cn = JSON.parse(
   fs.readFileSync(
-    path.join(__dirname, "ftbqkeys/kubejs/assets/kubejs/lang/auto.json"),
+    path.join(__dirname, "ftbqkeys/kubejs/assets/kubejs/lang/zh_cn.json"),
     "utf-8"
   )
 );
 // 合并zh_cn.json与en_us.json
 for (let key in en_us) {
-  if (!/^[\s]*$/.test(zh_cn[key])) continue; // zh_cn已有非空内容
+  if (!/^[\s]*$/.test(manual[key])) continue; // zh_cn已有非空内容
   let value = en_us[key]; // 原文内容
-  if (key in auto) value += "\n\n" + auto[key]; // 自动补充机翻内容
-  zh_cn[key] = value; // 修改zh_cn.json
+  if (key in zh_cn) value += "\n\n" + zh_cn[key]; // 自动补充机翻内容
+  manual[key] = value; // 修改zh_cn.json
 }
 
 output.on("close", function () {
@@ -95,7 +95,7 @@ files.forEach((file) => {
 });
 
 // 添加合并完成的zh_cn.json到压缩包
-const zhCnContent = JSON.stringify(zh_cn, null, 2);
+const zhCnContent = JSON.stringify(manual, null, 2);
 archive.append(zhCnContent, { name: "kubejs/assets/kubejs/lang/zh_cn.json" });
 
 // 完成文件添加后，关闭压缩包
