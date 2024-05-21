@@ -135,7 +135,7 @@ app.put("/", (req, res) => {
   locales.manual[key] = value;
 
   fs.writeFileSync(
-    `${localesPath}/zh_cn.json`,
+    `${localesPath}/manual.json`,
     JSON.stringify(locales.manual, null, 2)
   );
   res.status(200).send("修改成功");
